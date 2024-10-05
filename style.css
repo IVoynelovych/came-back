@@ -1,0 +1,972 @@
+html {
+  box-sizing: border-box;
+}
+html *,
+::after,
+::before {
+  box-sizing: inherit;
+}
+button {
+  border: none;
+  background: transparent;
+}
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+@font-face {
+  font-family: "sans";
+  src: url(./IntegralCF-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "satoshi";
+  src: url(./Satoshi-Light.woff2) format("woff2");
+}
+@font-face {
+  font-family: "satoshi-b";
+  src: url(./Satoshi-Bold.woff2) format("woff2");
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  line-height: 1;
+  font-family: "satoshi";
+  background-color: white;
+}
+
+button {
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  padding: 0;
+  margin: 0;
+}
+.fa-star {
+  font-size: 200000px;
+  color: gray;
+}
+.checked {
+  color: orange;
+}
+
+.half {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 16px;
+}
+
+.half::before {
+  content: "\f005";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  color: orange;
+  font-family: "FontAwesome";
+  font-size: 16px;
+  overflow: hidden;
+}
+.add-sell {
+  background-color: black;
+}
+.add-cont {
+  max-width: 390px;
+  color: white;
+  text-align: center;
+  margin: 0 auto;
+  padding: 9px 45px;
+}
+.addvartising-txt {
+  font-size: 12px;
+  font-weight: 400;
+}
+.addvartising-txt span {
+  text-decoration: underline;
+}
+.cross-svg {
+  height: 20px;
+  width: 20px;
+  display: none;
+}
+.cont-nav {
+  max-width: 390px;
+  padding: 23px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.acivities {
+  display: flex;
+  gap: 16px;
+}
+.brg-menu {
+  width: 24px;
+  height: 24px;
+}
+.logo {
+  color: #000;
+  font-family: "sans";
+  font-size: 25px;
+  font-weight: 700;
+}
+.icons-list {
+  display: flex;
+  gap: 12px;
+}
+.icons-list-item-svg {
+  width: 24px;
+  height: 24px;
+}
+.hero-main {
+  background: #f2f0f1;
+  background-image: url(./picture/home-pic-390.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.hero-cont {
+  max-width: 390px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 40px 16px 442px 16px;
+}
+
+.hero-title {
+  color: #000;
+  font-family: "sans";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 0.9;
+}
+.hero-txt {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 20px 0 24px 0;
+}
+.shop-btn {
+  font-size: 16px;
+  padding: 16px 140px;
+  color: white;
+  border-radius: 62px;
+  background: #000;
+  margin-bottom: 20px;
+}
+.advent-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 27.5px;
+  row-gap: 12px;
+}
+.advent-list-item {
+  color: #000;
+  font-family: "satoshi-b";
+  font-size: 24px;
+  font-weight: 700;
+}
+.bord + .advent-list-item {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 27.5px;
+}
+.advent-list-item span {
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "satoshi";
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.navigation-list {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  display: none;
+}
+.navigation-list-item {
+  display: flex;
+  align-items: center;
+  color: #000;
+  font-family: "satoshi";
+  font-size: 16px;
+  font-weight: 400;
+}
+.down-svg {
+  width: 16px;
+  height: 16px;
+}
+.search-input {
+  border: none;
+  background: #f0f0f0;
+  outline: none;
+}
+.search-input::placeholder {
+  font-family: "satoshi";
+  font-size: 16px;
+  font-weight: 400;
+}
+.search-svg {
+  width: 24px;
+  height: 24px;
+}
+.label-search {
+  width: 577px;
+  display: flex;
+  padding: 12px 16px;
+  align-items: center;
+  border-radius: 62px;
+  background: #f0f0f0;
+  gap: 12px;
+  display: none;
+}
+.brands {
+  background-color: #000;
+}
+.brands-cont {
+  max-width: 390px;
+  padding: 39px 16px;
+  margin: 0 auto;
+}
+.brands-list {
+  display: flex;
+  gap: 34px;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.small {
+  width: 60px;
+}
+.big {
+  width: 120px;
+}
+.mid {
+  width: 100px;
+}
+.brands-list-item-svg {
+  height: 23px;
+}
+.new-arrivals-cont {
+  max-width: 390px;
+  padding: 0 16px;
+  text-align: center;
+  margin: 0 auto;
+}
+.top-selling {
+  margin-bottom: 80px;
+}
+.new-arrivals {
+  margin: 50px 0 64px;
+}
+.new-arrivals-title {
+  color: #000;
+  font-family: "sans";
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.items-list {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.items-list-item {
+  text-align: left;
+}
+.item-pic {
+  width: 170px;
+  border-radius: 13.424px;
+  height: 185px;
+}
+.only-1440 {
+  display: none;
+}
+.item-name {
+  color: #000;
+  font-family: "satoshi-b";
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.star-rating {
+  display: flex;
+  gap: 4px;
+  margin: 4px 0;
+}
+.count-stars {
+  color: #000;
+  font-family: "satoshi";
+  font-size: 12px;
+  font-weight: 400;
+}
+.count-stars span {
+  color: rgba(0, 0, 0, 0.6);
+}
+.price {
+  color: #000;
+  font-family: "satoshi-b";
+  font-size: 20px;
+  font-weight: 700;
+}
+.view-all-btn {
+  border-radius: 62px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 16px 154px;
+  color: #000;
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 500;
+}
+.first-price {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "satoshi-b";
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration-line: line-through;
+}
+.sell-price {
+  display: flex;
+  gap: 5px;
+}
+.disc {
+  color: #f33;
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 62px;
+  background: rgba(255, 51, 51, 0.1);
+  height: 25px;
+  padding: 6px 14px;
+}
+
+.top-sells::before {
+  display: block;
+  content: "";
+  margin-bottom: 64px;
+  width: 358px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.styles-cont {
+  max-width: 390px;
+  padding: 0 16px;
+}
+.browse-style {
+  border-radius: 20px;
+  background: #f0f0f0;
+  padding: 40px 24px 27px;
+}
+.styles-title {
+  color: #000;
+  text-align: center;
+  font-family: "sans";
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+.styles-list-item {
+  text-align: left;
+  padding: 16px 210px 142px 24px;
+  border-radius: 20px;
+  background: #fff;
+  background-image: url(./picture/casual.jpg);
+  background-repeat: no-repeat;
+}
+.style-name {
+  color: #000;
+  font-family: "satoshi-b";
+  font-size: 24px;
+  font-weight: 700;
+}
+.styles-list-item:nth-child(2) {
+  background-image: url(./picture/formal.jpg);
+}
+.styles-list-item:nth-child(3) {
+  background-image: url(./picture/party.jpg);
+}
+.styles-list-item:nth-child(4) {
+  background-image: url(./picture/gym.jpg);
+  background-position: right;
+}
+.styles-list-item + .styles-list-item {
+  margin-top: 16px;
+}
+.feedback {
+  margin-top: 50px;
+}
+.feedback-cont {
+  max-width: 390px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.feedback-control {
+  display: flex;
+  align-items: flex-end;
+  gap: 83px;
+  margin-bottom: 24px;
+}
+.move-list {
+  display: flex;
+  gap: 16px;
+}
+.svg-move {
+  width: 24px;
+  height: 24px;
+}
+.feedback-title {
+  color: #000;
+  font-family: "sans";
+  font-size: 32px;
+  font-weight: 700;
+}
+.veryfied-svg {
+  width: 19px;
+  height: 19px;
+}
+.client-mark {
+  margin-bottom: 12px;
+}
+.feedbacks-list {
+  display: flex;
+  overflow: hidden;
+}
+.feedbakack-item {
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.autor-name {
+  color: #000;
+  font-family: "satoshi-b";
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.feedback-text {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 400;
+}
+footer {
+  background: #f0f0f0;
+  position: relative;
+  margin-top: 180px;
+}
+.info-send {
+  position: absolute;
+  top: -135px;
+  left: 0;
+  right: 0;
+}
+.info-send-cont {
+  max-width: 390px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.infos-reg {
+  border-radius: 20px;
+  background: #000;
+  padding: 32px 23px 28px 24px;
+}
+.reg-title {
+  color: #fff;
+  font-family: "sans";
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px;
+}
+.email-svg {
+  width: 20px;
+  height: 20px;
+}
+.label-email {
+  border-radius: 62px;
+  background: #fff;
+  display: flex;
+  padding: 12px 16px;
+  gap: 12px;
+}
+.mail-input {
+  color: rgba(0, 0, 0, 0.4);
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 400;
+  border: none;
+  width: 100%;
+  outline: none;
+}
+.mail-btn {
+  margin-top: 12px;
+  font-family: "satoshi";
+  border-radius: 62px;
+  background: #fff;
+  font-weight: 500;
+  padding: 12px 85px;
+  font-size: 14px;
+}
+.footer-cont {
+  max-width: 390px;
+  margin: 0 auto;
+  padding: 190px 17px 77px;
+}
+.footer-logo {
+  color: #000;
+  font-family: "sans";
+  font-size: 28.847px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.contacts-text {
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "satoshi";
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom:20px;
+}
+.social-list{
+  display: flex;
+  gap: 12px;
+}
+.socials-svg{
+  width: 28px;
+  height: 28px;
+}
+.footer-points{
+  margin-top:25px ;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  column-gap:89px;
+  row-gap: 24px;
+}
+.footer-infos::after{
+  display: block;
+  content: "";
+  margin-top: 40px;
+  width: 358px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.point-title{
+  color: #000;
+font-family: 'satoshi-b';
+font-size: 14px;
+font-weight: 500;
+letter-spacing: 3px;
+margin-bottom: 16px;
+}
+.point-text + .point-text{
+  margin-top: 16px;
+}
+.point-text{
+  display: block;
+  color: rgba(0, 0, 0, 0.60);
+font-family: 'satoshi';
+font-size: 14px;
+font-weight: 400;
+}
+.payment-info{
+  margin-top: 16px;
+}
+.payments-text{
+  color: rgba(0, 0, 0, 0.60);
+  text-align: center;
+  font-family: 'satoshi';
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+.payment-list{
+  text-align: center;
+  display: flex;
+  gap: 10px;
+}
+.payment-svg{
+  width: 40px;
+  height: 25px;
+}
+@media screen and (min-width: 1440px) {
+  .add-cont {
+    max-width: 1440px;
+    padding: 9px 100px 9px 544px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    display: flex;
+    gap: 425px;
+  }
+  .addvartising-txt {
+    font-size: 14px;
+  }
+  .cross-svg {
+    display: block;
+  }
+
+  .cont-nav {
+    max-width: 1440px;
+    padding: 24px 100px;
+    display: flex;
+    justify-content: start;
+    gap: 40px;
+    align-items: normal;
+  }
+  .acivities {
+    gap: 0;
+    text-align: center;
+  }
+  .brg-menu {
+    display: none;
+  }
+  .logo {
+    font-size: 32px;
+  }
+  .icons-list {
+    align-items: center;
+    gap: 14px;
+  }
+  .search {
+    display: none;
+  }
+  .navigation-list {
+    display: flex;
+  }
+  .label-search {
+    display: flex;
+  }
+  .hero-main {
+    background-image: url(./picture/home-page-1440.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+  .hero-cont {
+    max-width: 1440px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 103px 744px 116px 100px;
+  }
+  .hero-title {
+    font-size: 64px;
+    line-height: 1;
+  }
+  .hero-txt {
+    font-size: 16px;
+    margin: 32px 0;
+  }
+  .shop-btn {
+    padding: 16px 67.5px;
+    color: white;
+    border-radius: 62px;
+    background: #000;
+    margin-bottom: 48px;
+  }
+  .advent-list {
+    justify-content: left;
+    gap: 32px;
+  }
+  .advent-list-item {
+    font-size: 40px;
+  }
+  .advent-list-item span {
+    font-size: 16px;
+  }
+  .bord + .advent-list-item {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .advent-list-item + .advent-list-item {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 32px;
+  }
+  .brands-cont {
+    max-width: 1440px;
+    padding: 44px 100px;
+  }
+  .brands-list {
+    display: flex;
+    gap: 106px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .small {
+    width: 91px;
+  }
+  .big {
+    width: 189px;
+  }
+  .mid {
+    width: 156px;
+  }
+  .brands-list-item-svg {
+    height: 33px;
+  }
+  .new-arrivals-cont {
+    max-width: 1440px;
+    padding: 0 100px;
+    margin: 79px 0;
+  }
+  .new-arrivals-title {
+    font-size: 48px;
+    margin-bottom: 55px;
+  }
+  .only-1440 {
+    display: block;
+  }
+  .items-list {
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .item-pic {
+    width: 296px;
+    height: 298px;
+  }
+  .item-name {
+    font-size: 20px;
+    margin-top: 16px;
+  }
+  .star-rating {
+    margin: 8px 0;
+  }
+  .count-stars {
+    font-size: 14px;
+  }
+  .sell-price {
+    gap: 10px;
+  }
+  .price {
+    font-size: 24px;
+  }
+  .first-price {
+    font-size: 24px;
+  }
+  .disc {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+  .view-all-btn {
+    padding: 16px 80px;
+    font-size: 16px;
+  }
+  .top-sells::before {
+    width: 1240px;
+  }
+  .styles-cont {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+  .browse-style {
+    border-radius: 40px;
+    background: #f0f0f0;
+    padding: 70px 64px 76px;
+  }
+  .styles-title {
+    font-size: 48px;
+    margin-bottom: 64px;
+  }
+  .style-name {
+    font-size: 36px;
+  }
+  .styles-list-item {
+    text-align: left;
+    background-image: url(./picture/casual-1440.jpg);
+    padding: 36px 0 0 25px;
+  }
+  .styles-list-item:nth-child(2) {
+    background-image: url(./picture/formal-1440.jpg);
+  }
+  .styles-list-item:nth-child(3) {
+    background-image: url(./picture/party-1440.jpg);
+  }
+  .styles-list-item:nth-child(4) {
+    background-image: url(./picture/gym-1440.jpg);
+  }
+  .styles-list {
+    display: grid;
+    grid-template-columns: repeat(3, 407px, 684px);
+    grid-auto-rows: 289px;
+    gap: 20px;
+  }
+  .casual {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  .formal {
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+  .party {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .gym {
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+  .styles-list-item + .styles-list-item {
+    margin-top: 0;
+  }
+  .feedback {
+    margin-top: 80px;
+  }
+  .feedback-cont {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+  .feedback-control {
+    gap: 522px;
+    margin-bottom: 40px;
+  }
+  .feedback-title {
+    font-size: 48px;
+  }
+  .veryfied-svg {
+    width: 24px;
+    height: 24px;
+  }
+  .client-mark {
+    margin-bottom: 15px;
+  }
+  .feedbacks-list {
+    justify-content: center;
+  }
+  .feedbakack-item {
+    width: 400px;
+    padding: 28px 32px;
+  }
+  .autor-name {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .feedback-text {
+    font-size: 16px;
+  }
+  .info-send{
+    top:-90px;
+  }
+  .info-send-cont {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
+  .infos-reg {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 64px;
+  }
+  .reg-title {
+    font-family: "sans";
+    font-size: 40px;
+    margin-bottom: 0;
+    width: 551px;
+  }
+  .email-svg {
+    width: 24px;
+    height: 24px;
+  }
+  .mail-input {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .mail-btn {
+    margin-top: 16px;
+  }
+  .footer-cont {
+    max-width: 1440px;
+    padding: 140px 100px 88px;
+  }
+  .footer-infos{
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);    ;
+  }
+  .footer-logo {
+    font-size: 33px;
+    margin-bottom: 25px;
+  }
+  .contacts-text {
+    width: 248px;
+    margin-bottom:35px;
+  }
+  .footer-points{
+    margin-top:0 ;
+    align-items: center;
+    column-gap:115px;
+    row-gap: 0;
+  }
+  .footer-infos::after{
+    display: none;
+  }
+  .point-title{
+  font-size: 16px;
+  margin-bottom: 26px;
+  }
+  .point-text + .point-text{
+    margin-top: 24px;
+  }
+  .point-text{
+  font-size: 16px;
+  }
+  .payment-info{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+  }
+  .payments-text{
+    margin-bottom: 0;
+  }
+  .payment-list{
+    text-align: center;
+    display: flex;
+    gap: 10px;
+  }
+  .payment-svg{
+    width: 46px;
+    height: 30px;
+  }
+}
